@@ -1,0 +1,9 @@
+home_dir = '/path/to/SCIGEN' # Same as PROJECT_ROOT
+hydra_dir = 'path/to/HYDRA_JOBS/singlerun' # Set as HYDRA_JOBS/singlerun/
+job_dir = 'yyyy-mm-dd/expname' # The directory where the model chkpt/data data stored
+out_name = 'sc_pyc1000_000'   #'file name of generated materials'
+gnn_eval_path = './gnn_eval'
+stab_pred_name_A = "stab_240409-113155"    # 'yymmdd-hhmmss' 
+stab_pred_name_B = "stab_240402-111754"   # 'yymmdd-hhmmss' 
+mag_pred_name = "mag_240815-085301"   # 'yymmdd-hhmmss'
+seedn = 42

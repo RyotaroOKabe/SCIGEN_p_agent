@@ -1,0 +1,23 @@
+# general
+__pycache__
+
+slurm/*
+*.sh
+figures/*
+archive/
+save/
+demos
+
+
+mace_data_prep.py
+binding_energy.py
+binding_energy.ipynb
+
+stack_energy.ipynb
+stack_energy.py
+stack_energy_cif.py
+
+
+alex_2d_flat.py
+
+

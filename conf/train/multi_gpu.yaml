@@ -1,0 +1,25 @@
+# Multi-GPU training configuration
+# This config can be used with: train=multi_gpu
+# Or override specific parameters via command line:
+#   train.pl_trainer.devices=4 train.pl_trainer.strategy=ddp
+
+defaults:
+  - default
+
+pl_trainer:
+  accelerator: gpu
+  devices: 4  # Number of GPUs to use (PyTorch Lightning will spawn 4 processes)
+  strategy: ddp  # Distributed Data Parallel strategy for multi-GPU training
+  # Note: With --ntasks-per-node=1 and --gpus-per-task=4,
+  # PyTorch Lightning automatically spawns 4 subprocesses (one per GPU) for DDP
+  # Alternative strategies:
+  # - ddp: Standard DDP (recommended for single-node multi-GPU)
+  # - ddp_find_unused_parameters_false: Faster DDP if model doesn't have unused parameters
+  # - deepspeed: For very large models (requires DeepSpeed installation)
+  precision: 32
+  # Note: When using DDP, batch size is effectively multiplied by number of GPUs
+  # Consider adjusting batch size in data config if needed
+
+# Optional: Adjust gradient accumulation if needed
+# accumulate_grad_batches: 1  # Keep at 1 for DDP, or increase if you need larger effective batch size
+
