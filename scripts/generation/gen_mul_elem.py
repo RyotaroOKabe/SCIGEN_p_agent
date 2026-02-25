@@ -1,6 +1,6 @@
 import os, sys
 from os.path import join
-sys.path.append('../../')
+# sys.path.append('../../')
 from config_scigen import hydra_dir, job_dir
 
 ############
@@ -16,9 +16,9 @@ header = 'sc'   # Header for the label
 sc_list = ['lieb']   # List of SCs to generate
 # atom_list = ['Mn', 'Fe', 'Co', 'Ni', 'Ru', 'Nd', 'Gd', 'Tb', 'Dy', 'Yb', 'Cu']
 atom_list = ['Mn', 'Fe', 'Co', 'Ni', 'Cu']
-t_mask = False   # Use mask for atom type
+t_mask = True   # Use mask for atom type
 frac_z = 0.5   # Fraction of z-axis for mask. If None, frac_z is radomly selected in [0, 1).
-save_cif = False # Whether to save CIF files
+save_cif = True # Whether to save CIF files
 ###################
 
 sc_natm_range = {   # max number of atoms in the unit cell

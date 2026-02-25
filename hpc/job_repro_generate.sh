@@ -36,7 +36,7 @@ source /pscratch/sd/r/ryotaro/anaconda3/bin/activate \
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 # Best existing checkpoint — update this if you trained a new model
-MODEL_PATH=/pscratch/sd/r/ryotaro/data/generative/hydra/singlerun/2026-02-24/repro_mp20_1gpu
+MODEL_PATH=/pscratch/sd/r/ryotaro/data/generative/hydra/singlerun/2026-02-24/mp_20_v1   #repro_mp20_1gpu
 
 DATASET=mp_20
 BATCH_SIZE=50
@@ -47,7 +47,7 @@ NATM_MAX=12
 LABEL=repro_lieb1000_000
 KNOWN_SPECIES="Mn Fe Co Ni Ru Nd Gd Tb Dy Yb Cu"
 FRAC_Z=0.5
-T_MASK=True
+T_MASK=False
 SEED=42
 
 # ── Environment info ──────────────────────────────────────────────────────────
