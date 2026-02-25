@@ -43,8 +43,8 @@ gen_mul_c.py
 gen_mul_ro.py
 gen_movie.py
 
-# screening 
-screening/
+# screening (anchor to root; scripts/screening/ should be tracked)
+/screening/
 scripts_archive/
 
 gnn_mag_/
