@@ -19,6 +19,7 @@ Main entrypoint for **SCIGEN — Structure-Constrained Crystal Generation** with
 - [Screen](./commands/screen.md): SMACT + GNN stability/mag screening.
 - [HPC](./commands/hpc.md): SLURM submission, monitoring, log locations.
 - [Debug](./commands/debug.md): Known errors and how to resolve them.
+- [Progress](./commands/progress.md): **When and how to write progress reports** → `progress/YYYY-MM-DD_<slug>.md`
 
 ## Quick Start
 

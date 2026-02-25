@@ -460,6 +460,8 @@ def smact_validity(comp, count,
     #     return False
     oxn = 1
     for oxc in ox_combos:
+        if oxc is None:   # noble gases / elements with no SMACT oxidation states
+            return False
         oxn *= len(oxc)
     if oxn > 1e7:
         return False
