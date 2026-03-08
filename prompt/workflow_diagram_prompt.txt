@@ -1,0 +1,94 @@
+Create a detailed schematic diagram illustrating the SCIGEN+ workflow for human preference-guided crystal structure generation with geometric constraints. The diagram should show the complete pipeline from data to final materials discovery.
+
+## Overall Layout
+Create a vertical flow diagram with three main stages, connected by arrows. Use distinct color coding for each stage and include icons/visual elements to make it intuitive.
+
+## Stage 1: Pre-training (Top Section - Blue Theme)
+- **Title**: "Stage 1: Base Model Pre-training"
+- **Input**: Icon of database labeled "Materials Project MP-20" (show ~40K crystal structures)
+- **Process**:
+  - Show crystal structure representation: lattice parameters (L), fractional coordinates (X), atom types (A)
+  - Illustrate diffusion process with noisy → clean arrow
+  - Label: "DiffCSP++ Model" with neural network icon
+- **Output**: Box labeled "Pre-trained DiffCSP++" with checkmark
+- **Visual**: Include 2-3 example crystal structures (small 3D ball-and-stick models)
+
+## Stage 2: Human Preference Learning (Middle Section - Orange/Red Theme)
+This section has two parallel workflows that merge:
+
+### 2A: Preference Data Collection (Left branch)
+- **Title**: "Preference Data Collection"
+- **Process**:
+  - Show web interface mockup with two band structure plots side-by-side (A vs B)
+  - Human annotator icon with speech bubble: "Which band structure shows better flat band near Fermi level?"
+  - Show confidence slider (1-5 stars)
+- **Data representation**:
+  - Icon showing dataset: {(structure_winner, structure_loser, confidence_score)}
+  - Label: "Pairwise Preference Dataset"
+  - Show multiple human icons (crowdsourcing concept)
+
+### 2B: DPO Fine-tuning (Right branch merging with 2A)
+- **Title**: "Direct Preference Optimization"
+- **Input**: Pre-trained DiffCSP++ (from Stage 1) + Preference Dataset (from 2A)
+- **Process**:
+  - Show algorithm box: "Hölder-DPO Fine-tuning"
+  - Illustrate: frozen reference model θ_ref vs trainable model θ
+  - Small equation snippet: "Maximize margin for preferred structures"
+  - Show confidence weighting icon (shield or filter symbol)
+- **Output**: Box labeled "DPO-DiffCSP++" (preference-tuned model)
+- **Key insight bubble**: "Model learns: flat bands near E_F + good isolation"
+
+## Stage 3: Constraint-Guided Generation (Bottom Section - Green Theme)
+- **Title**: "Stage 3: Constraint-Guided Generation (SCIGEN+)"
+- **Input (left)**: DPO-DiffCSP++ model from Stage 2
+- **Input (right)**: Geometric constraints panel showing:
+  - Kagome lattice diagram (hexagonal pattern with vertices)
+  - Lieb lattice diagram (square with center points)
+  - Label: "Structural Motif Selection"
+- **Process**:
+  - Show masking operation: "Fix motif atoms + lattice symmetry"
+  - Illustrate: constrained positions (locked) vs free positions (unlocked)
+  - Generation arrow with label: "Denoising with constraints applied at each timestep"
+- **Output**:
+  - Multiple generated crystal structures (3-4 examples)
+  - Each labeled with chemical formula
+  - Show kagome/Lieb pattern highlighted in each structure
+- **Validation pipeline** (small sub-section):
+  - SMACT check → CHGNet screening → DFT validation
+  - Icons: checkmark → energy calculator → band structure plot
+
+## Key Concepts to Highlight (Side Annotations)
+- **Modularity**: Show with dashed box that Stages 2 and 3 are modular (can be applied independently)
+- **Two-stage approach**: Annotation explaining "Preference learning (training) + Geometric constraints (generation time)"
+- **Goal**: Small box at very bottom showing target: "Flat band materials near Fermi level with kagome/Lieb structure"
+
+## Visual Design Specifications
+- Use professional scientific poster style
+- Color scheme:
+  - Stage 1: Blue (#3498db)
+  - Stage 2: Orange/Red (#e74c3c for preference, #f39c12 for DPO)
+  - Stage 3: Green (#27ae60)
+- Include small icons:
+  - Database icon for datasets
+  - Neural network icon for models
+  - Human icon for annotators
+  - Lock/unlock icons for constraints
+  - Crystal structure illustrations (ball-and-stick 3D models)
+  - Band structure plot examples (E vs k curves)
+- Use arrows to show data flow (solid for main flow, dashed for optional/feedback)
+- Font: Sans-serif, readable at poster scale
+- Include legend explaining icons and color coding
+
+## Text Labels to Include
+- "Input", "Process", "Output" labels for each stage
+- Brief descriptions (1-2 sentences max per element)
+- Chemical formulas for example materials (e.g., Fe₃Ge₃, MnSi₂)
+- Key metrics: "MP-20: 45,000 structures", "Preference pairs: ~1000", "Generated: 10,000+", "Validated: top 100"
+
+## Overall Dimensions
+- Aspect ratio: 3:4 (portrait orientation)
+- High resolution for publication quality
+- Leave whitespace for readability
+- Ensure all text is legible when printed at poster size
+
+Generate this diagram as a clean, professional scientific schematic suitable for a research paper or conference presentation.

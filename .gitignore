@@ -5,6 +5,10 @@ figures/
 slurm/
 conf_sg/
 save_tmp/
+references/
+prompts/
+progress/
+memo/
 dir.py
 multiple_gen.py
 multiple_gen2.py
