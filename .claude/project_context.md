@@ -77,3 +77,30 @@ Screen (script/eval_screen.py)
 ## Key External Dependencies
 - `scigen/`: local library — NOT pip-installed; patched via `sys.path.append('.')`.
 - `archive/`: frozen historical snapshots; do not modify.
+
+## Overleaf Papers & Reading Notes
+
+### Overleaf Repositories
+Location: `/pscratch/sd/r/ryotaro/data/generative/overleaf/`
+
+| Paper | Status | Description |
+|-------|--------|-------------|
+| `scigenp_overview` | 📝 Active | Main SCIGEN+ paper (git repo) |
+| `scigenp_overview_MA` | 📝 Active | SCIGEN+ MA version (git repo) |
+| `Diffusion_DPO_archive` | 📦 Archive | DPO paper |
+| `Diffusion_finetune_archive` | 📦 Archive | Finetuning paper |
+| `SCIGEN_archive` | 📦 Archive | Original SCIGEN paper |
+
+### Reading Notes
+Location: `/pscratch/sd/r/ryotaro/data/generative/overleaf_notes/`
+
+**IMPORTANT**: Reading notes are stored SEPARATELY from overleaf git repos to avoid conflicts with collaborators.
+
+Each paper has structured notes:
+- `technical_terms.md` - Definitions, acronyms, notation
+- `key_concepts.md` - Main ideas, methods, results
+- `code_correspondence.md` - Paper-to-code mappings
+- `implementation_plan.md` - Implementation planning
+- `changes_log.md` - Log of overleaf updates
+
+See [OVERLEAF.md](./.claude/OVERLEAF.md) for handling rules and [docs/OVERLEAF_NOTES_GUIDE.md](../docs/OVERLEAF_NOTES_GUIDE.md) for quick reference.

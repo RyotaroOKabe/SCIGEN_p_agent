@@ -1,6 +1,6 @@
 # Command: Write Progress Report
 
-Write a markdown progress report to `progress/` whenever a critical update occurs.
+Write a markdown progress report to `docs/progress/` whenever a critical update occurs.
 
 ## When to Write
 
@@ -13,7 +13,7 @@ Write a markdown progress report to `progress/` whenever a critical update occur
 ## File Naming
 
 ```
-progress/YYYY-MM-DD_<slug>.md
+docs/progress/YYYY-MM-DD_<slug>.md
 ```
 
 - Date = today in PST (`date +%Y-%m-%d`)
@@ -77,5 +77,5 @@ abc1234  <message>
 
 1. Gather all facts from the current session: SLURM job IDs, exit codes, pass-rate numbers, file paths, error messages.
 2. Fill the template — omit sections that are empty.
-3. Save to `progress/YYYY-MM-DD_<slug>.md`.
-4. Stage and commit alongside any code changes: `git add progress/ && git commit`.
+3. Save to `docs/progress/YYYY-MM-DD_<slug>.md`.
+4. Stage and commit alongside any code changes: `git add docs/progress/ && git commit`.

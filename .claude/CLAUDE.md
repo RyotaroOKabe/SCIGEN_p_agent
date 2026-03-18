@@ -8,18 +8,30 @@ Main entrypoint for **SCIGEN — Structure-Constrained Crystal Generation** with
 - **Pipeline**: Train model → Generate constrained structures → SMACT+GNN screening → CIF outputs.
 
 ## Configuration Map
-- [Project Context](./project_context.md): Scope, datasets, checkpoints, exclusions.
+- [Project Context](./project_context.md): Scope, datasets, checkpoints, exclusions, overleaf papers.
 - [Rules](./RULES.md): Hard constraints, naming conventions, SLURM/secrets policy.
+- [Overleaf](./OVERLEAF.md): **Overleaf handling rules** — git sync, reading notes, implementation planning.
 - [Skills](./SKILLS.md): Operational cheat sheet — one-liners for every common task.
 - [Code Style](./code_style.md): Python formatting, logging, reproducibility conventions.
 
 ## Command Guides
+
+### Core Pipeline
 - [Train](./commands/train.md): Training from scratch or resuming; Hydra overrides.
 - [Generate](./commands/generate.md): Constrained generation from a checkpoint.
 - [Screen](./commands/screen.md): SMACT + GNN stability/mag screening.
 - [HPC](./commands/hpc.md): SLURM submission, monitoring, log locations.
 - [Debug](./commands/debug.md): Known errors and how to resolve them.
-- [Progress](./commands/progress.md): **When and how to write progress reports** → `progress/YYYY-MM-DD_<slug>.md`
+
+### Documentation
+- [Progress](./commands/progress.md): **When and how to write progress reports** → `docs/progress/YYYY-MM-DD_<slug>.md`
+- [Discussion](./commands/discussion.md): **Meeting notes and feedback reviews** → `docs/discussion/YYYY-MM-DD_<slug>.md`
+- [Prompt](./commands/prompt.md): **Critical prompts for AI tools** → `docs/prompt/YYYY-MM-DD_<slug>.md`
+
+### Overleaf
+- [Overleaf Sync](./commands/overleaf-sync.md): **Safely sync overleaf git repos** with conflict checking
+- [Overleaf Read](./commands/overleaf-read.md): **Start interactive reading session** for papers
+- [Overleaf Plan](./commands/overleaf-plan.md): **Plan implementation** from paper concepts
 
 ## Quick Start
 
@@ -57,3 +69,5 @@ sbatch hpc/job_repro_screen.sh
 | Best ckpt (mp_20) | `hydra/singlerun/2026-01-12/test_py312/epoch=894-step=94870.ckpt` |
 | SLURM logs | `./slurm/` |
 | WandB artifacts | `/pscratch/sd/r/ryotaro/data/generative/wandb/` |
+| Overleaf papers | `/pscratch/sd/r/ryotaro/data/generative/overleaf/` |
+| Reading notes | `/pscratch/sd/r/ryotaro/data/generative/overleaf_notes/` |
